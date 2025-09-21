@@ -103,30 +103,37 @@
   }
   .navbar-right a:hover {background-color: #ccf5cc;}
 
-	/* Vòng tròn ngoài icon và hiệu ứng hover */
+/* Icon tròn */
 .icon-btn {
   position: relative;
   width: 40px;
   height: 40px;
-  background-color: #0b4f6c;
+  background-color: #dcdcdc; /* xám nhạt */
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin-left: 10px;
   transition: all 0.3s;
-  color: #006400;
+  color: #000; /* icon màu đen */
   font-size: 18px;
+}
+
+.icon-btn:hover {
+  background-color: #32a852; /* xanh lá đậm */
+  color: #fff; /* icon màu trắng khi hover */
+  transform: scale(1.2);
 }
 
 /* Tooltip tên icon */
 .icon-btn::after {
   content: attr(data-tooltip);
   position: absolute;
-  bottom: -30px; /* bên dưới icon */
+  bottom: -30px;
   left: 50%;
   transform: translateX(-50%) scale(0);
-  background-color: #0b4f6c;
+  background-color: #32a852; /* xanh lá đậm tooltip */
   color: #fff;
   padding: 4px 8px;
   border-radius: 4px;
@@ -137,16 +144,28 @@
   opacity: 0;
 }
 
-/* Hover effect: to icon, đổi màu, hiện tooltip */
-.icon-btn:hover {
-  background-color: #32a852; /* vòng tròn đậm hơn khi hover */
-  transform: scale(1.2); /* icon và vòng tròn lớn hơn */
-}
-
 .icon-btn:hover::after {
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
+
+	/* Sign In button chữ nhật */
+.sign-in-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: #0b4f6c;
+  color: #ffd700;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.sign-in-btn:hover {
+  background-color: #32a852;
+  transform: scale(1.05);
+}
+
 
 
   /* --- Responsive --- */
@@ -241,9 +260,7 @@
   </div>
 
   <div class="navbar-right">
-	  <a href="#" class="icon-btn" data-tooltip="Sign In">
-	    <i class="ti-user"></i>
-	  </a>
+	  <a href="#" class="sign-in-btn" data-tooltip="Sign In">Sign In</a>
 	  <div class="icon-btn" data-tooltip="Saved List">
 	    <i class="ti-heart"></i>
 	  </div>
@@ -253,6 +270,8 @@
 	  <div class="icon-btn" data-tooltip="My Cart">
 	    <i class="ti-shopping-cart"></i>
 	  </div>
+</div>
+
 </div>
 
 </div>
