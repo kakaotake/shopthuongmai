@@ -1,145 +1,62 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Ecommerce templates for your next project">
-	<meta name="author" content="Ecommerce-ui.com">
-
-	<title>Website layout sample</title>
-
-	<!-- FinalCSS -->
-	<link href="css/final.css" rel="stylesheet" type="text/css" />
-
-    <!-- Custom js -->
-    <script src="script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trang của bạn</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background-color: #ddd; /* màu mặc định cho card */
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+  }
+  .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    background-color: #bbb;
+  }
+  .card p {
+    margin: 10px 0 0 0;
+  }
+</style>
 </head>
 <body>
 
-<header class="border-bottom">
-    <section>
-        <div class="container max-sm:px-">
-            <div class="d-flex max-sm:flex-wrap py-4 gap-2 align-items-center justify-content-between">
-                <div class="d-flex align-items-center mr-4">
-                    <button class="btn btn-default btn-icon mr-2 sm:d-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="currentColor" fill="none">
-                            <path d="M4 5L20 5" stroke="currentColor" stroke-width="2"></path>
-                            <path d="M4 12L20 12" stroke="currentColor" stroke-width="2"></path>
-                            <path d="M4 19L20 19" stroke="currentColor" stroke-width="2"></path>
-                        </svg>
-                    </button>
-                    <a href="#" class="d-block flex-shrink-0 hover:opacity-80 d-flex text-decoration-none align-items-center m-0">
-                        <img src="logo.jpg" width="36" height="36" alt="Logo">
-                        <div style="font-size:24px;" class="max-lg:hidden text-neutral-1000 text-xl font-semibold ml-1">Brand<span class="text-orange-600">name</span> </div>
-                    </a>
-                </div>
-    
-                <div class="relative max-sm:order-3 max-sm:w-full flex-shrink-0">
-                    <button data-toggle="mymenu_1" class="btn btn-neutral max-sm:w-full"> 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
-                        All categories
-                    </button>
-                    <menu id="mymenu_1" hidden class="dropdown w-100 p-4">
-                        <h6 class="mb-2">Example large menu</h6>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, reprehenderit unde dolores vitae adipisci commodi, tempore consequuntur explicabo eveniet aut facilis quas sit!</p>
-                    </menu>
-                </div>
-                
-                <div class="md:flex-grow max-sm:order-2 max-sm:w-full lg:mr-5">
-                    <form class="d-flex align-items-center h-10 w-full mr-5" style="border:2px solid #000; border-radius: 10px;">
-                        <div class="relative w-full">
-                            <input type="search" class="form-control h-8 border-0 focus-none" placeholder="Search product">
-                        </div>
-                        <button class="btn btn-orange btn-sm btn-icon" style="margin-right: 2px;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
-                        </button>
-                    </form>
-                </div>
+<div class="container">
+  <div class="card">
+    <img src="logo.jpg" alt="Ảnh sản phẩm">
+    <p>Sản phẩm 1</p>
+  </div>
+  <div class="card">
+    <img src="logo.jpg" alt="Ảnh sản phẩm">
+    <p>Sản phẩm 2</p>
+  </div>
+  <div class="card">
+    <img src="logo.jpg" alt="Ảnh sản phẩm">
+    <p>Sản phẩm 3</p>
+  </div>
+  <div class="card">
+    <img src="logo.jpg" alt="Ảnh sản phẩm">
+    <p>Sản phẩm 4</p>
+  </div>
+</div>
 
-                <div class="d-flex align-items-center gap-1 lg:justify-content-end">	
-                    <button class="btn rounded-full font-medium">Sign in</button>
-                    <button title="Saved list" class="btn btn-lg btn-icon btn-neutral rounded-full">
-                        <img src="logo.jpg" width="24" height="24" alt="Saved list">
-                    </button>
-                    <button title="My Orders" class="btn btn-lg btn-icon btn-neutral rounded-full">
-                        <img src="logo.jpg" width="24" height="24" alt="My Orders">
-                    </button>
-                    <div class="relative">
-                        <button title="My Cart" class="btn btn-lg btn-icon btn-neutral rounded-full">
-                            <img src="logo.jpg" width="24" height="24" alt="My Cart">
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <nav class="py-1 bg-base h-12 max-sm:hidden">
-        <div class="container">
-            <ul class="nav justify-content-center">
-                <li><a class="nav-link" href="#">Hot offers</a></li>
-                <li><a class="nav-link" href="#">Recommends</a></li>
-                <li><a class="nav-link" href="#">New arrivals</a></li>
-                <li><a class="nav-link" href="#">Bestsellers</a></li>
-                <li><a class="nav-link" href="#">Gift boxes</a></li>
-                <li><a class="nav-link" href="#">Articles</a></li>
-                <li class="group">
-                    <a data-toggle="mymenu_2" class="nav-link has-icon-dropdown" href="#">More</a>
-                    <nav class="dropdown lg:min-w-50 group-hover:d-block d-none">
-                        <a class="dropdown-item" href="#">Example link 1</a>
-                        <a class="dropdown-item" href="#">Example link 2</a>
-                        <a class="dropdown-item" href="#">Get Ecommerce UI</a>
-                    </nav>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
-<!-- ================ SECTION INTRO ================ -->
-<section class="my-5">
-	<div class="container">
-		<div class="row">
-            <main class="md:col-8">
-                <article class="relative rounded overflow-hidden max-sm:h-70 lg:h-90" style="background-color:#F2E2BF;">
-                    <div class="absolute max-sm:max-w-60 top-20% left-10 max-sm:left-5 text-center max-sm:text-left">
-                        <h2 class="mb-1 max-sm:text-3xl font-medium text-5xl" style="font-family:Times, serif;">New trending <br> Interior decorations</h2>
-                        <p class="text-lg max-sm:text-default mb-5 text-orange-800">Hot summer discounts ending soon</p>
-                        <a href="#" class="btn btn-orange rounded-full px-5 btn-lg">
-                            Get Deals Now
-                        </a>
-                    </div>
-                    <img src="logo.jpg" alt="Banner" class="w-full h-full max-h-90 rounded">
-                </article>
-            </main>
-            <aside class="md:col-4 md:d-block d-none">
-                <article class="banner rounded h-full max-sm:hidden">
-                    <div class="caption p-5 pb-8 text-white text-center d-flex flex-col justify-content-end h-full">
-                        <h5 class="text-2xl font-normal mb-5">Custom interiors</h5>
-                        <p><a href="#" class="btn btn-outline border-white rounded-full">Order Now</a></p>    
-                    </div>
-                    <img class="img-bg" src="logo.jpg" alt="Small Banner">
-                </article>
-            </aside>
-        </div>
-	</div>
-</section>
-
-<!-- ================ SECTION CATGEORY  ================ -->
-<section class="pt-4">
-    <div class="container">
-        <header class="py-6">
-            <h4>Most popular categories</h4>
-        </header>
-        <ul class="row lg:row-cols-6 sm:row-cols-4 row-cols-2 gap-4">
-            <li>
-                <a href="#" class="group d-block text-initial text-decoration-none">
-                    <div class="overflow-hidden rounded h-55 bg-orange-200">
-                        <img src="logo.jpg" class="group-hover:scale-110 h-full w-full transition" alt="">
-                    </div>
-                    <p class="p-2 text-center">Hand made items</p>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="group d-block text-initial text-decoration-none">
-                   
+</body>
+</html>
