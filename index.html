@@ -125,12 +125,12 @@
   }
 
   /* --- Navbar Right Items --- */
-  .navbar-right a {
-    text-decoration: none;
-    color: #0b4f6c;
-    padding: 6px 10px;
-    border-radius: 5px;
-  }
+  .navbar-right {
+	  display: flex;
+	  align-items: center;
+	  gap: 8px; /* khoảng cách giữa Sign In và nhóm icon */
+	}
+
   .navbar-right a:hover {background-color: #ccf5cc;}
 
   /* Icon buttons */
@@ -144,11 +144,15 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 0;
     transition: background-color 0.3s;
     color: #0b4f6c;
     z-index: 1;
   }
+
+	.icon-btn + .icon-btn {
+	margin-left: 5px; /* khoảng cách giữa các icon */
+	}
   .icon-btn svg {
     width: 18px;
     height: 18px;
@@ -185,22 +189,27 @@
     transform: translateX(-50%) scale(1);
   }
 
-  /* Sign In Button */
-	.sign-in-btn {
-	  display: inline-block;
-	  padding: 8px 16px;
-	  border-radius: 6px;
-	  background-color: #a0f1a0;  /* giống All Catalog */
-	  color: #0b4f6c;            /* chữ màu đậm giống icon */
-	  text-decoration: none;
-	  transition: all 0.3s;
-	  font-weight: bold;
-	}
-	.sign-in-btn:hover {
-	  background-color: #32a852;  /* giống hover của All Catalog */
-	  color: #fff;
-	  transform: scale(1.05);
-	}
+/* --- Sign-in --- */
+  .sign-in-btn {
+  display: inline-flex;           /* giống button */
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: #a0f1a0;     /* cùng tông All Catalog */
+  color: #0b4f6c;
+  text-decoration: none;
+  border: 2px solid #a0f1a0;     /* tạo khung như nút */
+  transition: all 0.3s;
+  font-weight: bold;
+}
+.sign-in-btn:hover {
+  background-color: #32a852;
+  color: #fff;
+  border-color: #32a852;         /* khung hover theo background */
+  transform: scale(1.05);
+}
+
 
 
   /* --- Catalog --- */
