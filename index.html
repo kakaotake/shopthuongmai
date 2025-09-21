@@ -32,14 +32,19 @@
   .dropdown {
     position: relative;
   }
-  .dropdown button {
-    background-color: #a0f1a0;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #0b4f6c;
-  }
+ .dropdown button {
+  background-color: #a0f1a0;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #0b4f6c;
+  display: flex;        /* cho icon và chữ cùng hàng */
+  align-items: center;  /* căn giữa theo chiều dọc */
+  gap: 6px;             /* khoảng cách giữa icon và chữ */
+  font-size: 1em;
+}
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -59,6 +64,11 @@
   }
   .dropdown-content a:hover {background-color: #ccf5cc;}
   .dropdown:hover .dropdown-content {display: block;}
+  .dropdown button:hover {
+	background-color: #32a852;
+  	color: #fff;
+}
+
 
   /* Search bar */
   .search-bar {
@@ -116,14 +126,21 @@
   cursor: pointer;
   margin-left: 10px;
   transition: all 0.3s;
-  color: #000; /* icon màu đen */
   font-size: 18px;
+}
+
+.icon-btn i {
+  color: #000; /* icon màu đen mặc định */
+  transition: color 0.3s;
 }
 
 .icon-btn:hover {
   background-color: #32a852; /* xanh lá đậm */
-  color: #fff; /* icon màu trắng khi hover */
   transform: scale(1.2);
+}
+
+.icon-btn:hover i {
+  color: #fff; /* icon trắng khi hover */
 }
 
 /* Tooltip tên icon */
@@ -166,6 +183,29 @@
   transform: scale(1.05);
 }
 
+	/* Logo brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* khoảng cách logo - chữ */
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #0b4f6c;
+}
+.brand-logo {
+  width: 40px;  /* bằng khung icon */
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%; /* nếu muốn bo tròn */
+}
+
+/* Hamburger 3 gạch ngang */
+.hamburger {
+  font-size: 18px;  /* tương đương icon */
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
 
 
   /* --- Responsive --- */
@@ -173,13 +213,20 @@
   padding: 40px 0;
   background-color: #f9fff9;
 }
-.catalog header h4,
-.catalog header h5 {
+.catalog header h4 {
   font-size: 1.4em;
   margin-bottom: 20px;
   color: #0b4f6c;
   text-align: center;
 }
+	.catalog header h5 {
+  text-align: left;
+  margin-left: 5%;
+  margin-bottom: 20px;
+  font-size: 1.4em;
+  color: #0b4f6c;
+}
+
 
 .catalog .row {
   display: flex;
@@ -243,9 +290,17 @@
 <!-- Navbar -->
 <div class="navbar">
   <div class="navbar-left">
-    <div class="brand">BrandName</div>
+    <!-- Brand với logo -->
+    <div class="brand">
+      <img src="logo.jpg" alt="Logo" class="brand-logo">
+      BrandName
+    </div>
+
+    <!-- Dropdown All Catalog với 3 gạch ngang -->
     <div class="dropdown">
-      <button>All Catalog</button>
+      <button>
+        <span class="hamburger">☰</span> All Catalog
+      </button>
       <div class="dropdown-content">
         <a href="#">Category 1</a>
         <a href="#">Category 2</a>
