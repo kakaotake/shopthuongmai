@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trang của bạn</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons@0.1.2/css/themify-icons.css">
+<link rel="stylesheet" href="https://unpkg.com/themify-icons@0.1.2/css/themify-icons.css">
 <style>
   /* --- Reset cơ bản --- */
   * {margin:0; padding:0; box-sizing:border-box;}
@@ -241,16 +241,20 @@
   </div>
 
   <div class="navbar-right">
-    <a href="#">Sign In</a>
-    <div class="icon-btn" data-tooltip="Saved List">
-        <i class="ti-heart"></i>
-    </div>
-    <div class="icon-btn" data-tooltip="My Order">
-        <i class="ti-archive"></i>
-    </div>
-    <div class="icon-btn" data-tooltip="My Cart">
-        <i class="ti-shopping-cart"></i>
-    </div>
+	  <a href="#" class="icon-btn" data-tooltip="Sign In">
+	    <i class="ti-user"></i>
+	  </a>
+	  <div class="icon-btn" data-tooltip="Saved List">
+	    <i class="ti-heart"></i>
+	  </div>
+	  <div class="icon-btn" data-tooltip="My Order">
+	    <i class="ti-archive"></i>
+	  </div>
+	  <div class="icon-btn" data-tooltip="My Cart">
+	    <i class="ti-shopping-cart"></i>
+	  </div>
+</div>
+
 </div>
 </div>
 
@@ -352,9 +356,10 @@
 		
 	</section>
 	<hr class="my-0">
-	<section class="text-center py-6">
-		<p>Copyright © 2025 - 2027 DTHN</p>
+	<section style="text-align: center; padding: 24px 0;">
+	  <p>Copyright © 2025 - 2027 DTHN</p>
 	</section>
+
 </footer>
 
 </body>
