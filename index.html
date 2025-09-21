@@ -8,14 +8,15 @@
 <style>
   /* --- Reset cơ bản --- */
   * {margin:0; padding:0; box-sizing:border-box;}
-  body {font-family: Arial, sans-serif; background-color: #ffffff; color: #333;}
+  body {font-family: Calibri, sans-serif; background-color: #ffffff; color: #333;}
 
   /* --- Navbar --- */
   .navbar {
     display: flex;
+	gap: 30px;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background-color: #d4f2d0;
     padding: 10px 20px;
   }
@@ -62,8 +63,8 @@
   /* Search bar */
   .search-bar {
     display: flex;
-    flex: 1;
-    max-width: 300px; /* ngắn hơn full width */
+    flex: 2;
+    max-width: 600px;
     background-color: #ffffff;
     border: 2px solid #a0d4f1;
     border-radius: 10px;
@@ -76,12 +77,22 @@
     font-size: 0.95em;
   }
   .search-bar button {
-    background-color: #a0f1a0;
-    border: none;
-    padding: 6px 12px;
-    cursor: pointer;
-    color: #0b4f6c;
-  }
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #0b4f6c;
+  color: #ffd700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.search-bar button:hover {
+  background-color: #32a852;
+  transform: scale(1.1);
+}
 
   /* Navbar right items */
   .navbar-right a {
@@ -97,14 +108,14 @@
   position: relative;
   width: 40px;
   height: 40px;
-  background-color: #0b4f6c; /* màu vòng tròn mặc định */
+  background-color: #0b4f6c;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: all 0.3s;
-  color: #ffffff;
+  color: #006400;
   font-size: 18px;
 }
 
@@ -143,12 +154,14 @@
   padding: 40px 0;
   background-color: #f9fff9;
 }
-.catalog header h4 {
+.catalog header h4,
+.catalog header h5 {
   font-size: 1.4em;
   margin-bottom: 20px;
   color: #0b4f6c;
   text-align: center;
 }
+
 .catalog .row {
   display: flex;
   flex-wrap: wrap;
