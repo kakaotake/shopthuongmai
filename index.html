@@ -5,131 +5,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trang của bạn</title>
 <style>
-  /* ===== Reset & cơ bản ===== */
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Arial, sans-serif; background-color: #f5f5f5; }
+  /* --- Reset cơ bản --- */
+  * {margin:0; padding:0; box-sizing:border-box;}
+  body {font-family: Arial, sans-serif; background-color: #ffffff; color: #333;}
 
-  /* ===== Header ===== */
-  header {
+  /* --- Navbar --- */
+  .navbar {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #d0e6f2; /* xanh pastel */
     padding: 10px 20px;
-    border-bottom: 2px solid #ddd;
   }
-
-  /* Brandname */
-  .brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-right: 20px;
-    white-space: nowrap;
-  }
-
-  /* Navbar links + dropdown */
-  nav {
+  .navbar-left, .navbar-right {
     display: flex;
     align-items: center;
+    gap: 15px;
     flex-wrap: wrap;
-    gap: 10px;
-    flex-grow: 1;
   }
-
+  .brand {font-size: 1.5em; font-weight: bold; color: #0b4f6c;}
+  
+  /* Dropdown All Catalog */
   .dropdown {
     position: relative;
   }
-
   .dropdown button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #a0d4f1;
     border: none;
-    padding: 8px 16px;
-    cursor: pointer;
+    padding: 8px 12px;
     border-radius: 5px;
+    cursor: pointer;
+    color: #0b4f6c;
   }
-
   .dropdown-content {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 35px;
     left: 0;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 10;
+    background-color: #f0f9ff;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     border-radius: 5px;
+    z-index: 10;
   }
-
   .dropdown-content a {
     display: block;
-    padding: 10px;
+    padding: 8px 12px;
     text-decoration: none;
-    color: #000;
+    color: #0b4f6c;
   }
+  .dropdown-content a:hover {background-color: #cce7f5;}
+  .dropdown:hover .dropdown-content {display: block;}
 
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  /* Thanh tìm kiếm */
+  /* Search bar */
   .search-bar {
     display: flex;
     flex: 1;
-    max-width: 400px;
-    border: 2px solid #000;
+    max-width: 300px; /* ngắn hơn full width */
+    background-color: #ffffff;
+    border: 2px solid #a0d4f1;
     border-radius: 10px;
     overflow: hidden;
-    margin: 0 10px;
   }
-
   .search-bar input {
     flex: 1;
     border: none;
     padding: 6px 10px;
-    font-size: 1rem;
+    font-size: 0.95em;
   }
-
   .search-bar button {
+    background-color: #a0d4f1;
     border: none;
-    background-color: #FFA500;
-    color: #fff;
-    padding: 0 12px;
+    padding: 6px 12px;
     cursor: pointer;
+    color: #0b4f6c;
   }
 
-  .search-bar input:focus {
-    outline: none;
-  }
-
-  /* Header buttons */
-  .header-buttons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-left: auto;
-  }
-
-  .header-buttons button {
-    padding: 8px 12px;
-    border: 1px solid #4CAF50;
+  /* Navbar right items */
+  .navbar-right a {
+    text-decoration: none;
+    color: #0b4f6c;
+    padding: 6px 10px;
     border-radius: 5px;
-    background-color: #fff;
-    cursor: pointer;
+  }
+  .navbar-right a:hover {background-color: #cce7f5;}
+
+  /* --- Responsive --- */
+  @media (max-width: 800px) {
+    .search-bar {
+      flex-basis: 100%; /* rớt xuống dòng */
+      margin-top: 10px;
+    }
   }
 
-  .header-buttons button:hover {
-    background-color: #4CAF50;
-    color: #fff;
-  }
-
-  /* ===== Container sản phẩm ===== */
+  /* --- Cards --- */
   .container {
     width: 90%;
     max-width: 1200px;
@@ -138,7 +108,6 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
   }
-
   .card {
     background-color: #ddd;
     border-radius: 10px;
@@ -146,90 +115,20 @@
     text-align: center;
     padding: 10px;
   }
+  .card img {width: 100%; height: 150px; object-fit: cover; background-color: #bbb;}
+  .card p {margin-top: 10px;}
 
-  .card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    background-color: #bbb;
-  }
-
-  .card p {
-    margin: 10px 0 0 0;
-  }
-
-  /* ===== Footer ===== */
-  footer {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-top: 2px solid #ddd;
-    font-size: 0.9rem;
-  }
-
-  footer section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-
-  footer h6 {
-    margin-bottom: 8px;
-    font-weight: bold;
-  }
-
-  footer ul {
-    list-style: none;
-  }
-
-  footer ul li a {
-    text-decoration: none;
-    color: #000;
-  }
-
-  footer ul li a:hover {
-    text-decoration: underline;
-  }
-
-  footer hr {
-    border: none;
-    border-top: 1px solid #ccc;
-    margin: 10px 0;
-  }
-
-  footer p {
-    text-align: center;
-    color: #555;
-    font-size: 0.85rem;
-  }
-
-  /* ===== Responsive ===== */
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .search-bar {
-      margin: 10px 0;
-      width: 100%;
-      max-width: none;
-    }
-    .header-buttons {
-      width: 100%;
-      justify-content: flex-start;
-      gap: 5px;
-    }
-  }
+  /* --- Footer --- */
+  footer {background-color: #d0e6f2; padding: 20px;}
+  footer a {color: #0b4f6c; text-decoration: none;}
 </style>
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
-<header>
-  <div class="brand">Brandname</div>
-
-  <nav>
+<!-- Navbar -->
+<div class="navbar">
+  <div class="navbar-left">
+    <div class="brand">BrandName</div>
     <div class="dropdown">
       <button>All Catalog</button>
       <div class="dropdown-content">
@@ -238,97 +137,31 @@
         <a href="#">Category 3</a>
       </div>
     </div>
-
-    <div class="search-bar">
-      <input type="search" placeholder="Search product">
-      <button>
-        🔍
-      </button>
-    </div>
-
-    <div class="header-buttons">
-      <button>Sign In</button>
-      <button>Saved List</button>
-      <button>My Order</button>
-      <button>My Cart</button>
-    </div>
-  </nav>
-</header>
-
-<!-- ===== CONTAINER SẢN PHẨM ===== -->
-<div class="container">
-  <div class="card">
-    <img src="logo.jpg" alt="Ảnh sản phẩm">
-    <p>Sản phẩm 1</p>
   </div>
-  <div class="card">
-    <img src="logo.jpg" alt="Ảnh sản phẩm">
-    <p>Sản phẩm 2</p>
+  
+  <div class="search-bar">
+    <input type="text" placeholder="Search product">
+    <button>🔍</button>
   </div>
-  <div class="card">
-    <img src="logo.jpg" alt="Ảnh sản phẩm">
-    <p>Sản phẩm 3</p>
-  </div>
-  <div class="card">
-    <img src="logo.jpg" alt="Ảnh sản phẩm">
-    <p>Sản phẩm 4</p>
+
+  <div class="navbar-right">
+    <a href="#">Sign In</a>
+    <a href="#">Saved List</a>
+    <a href="#">My Order</a>
+    <a href="#">My Cart</a>
   </div>
 </div>
 
-<!-- ===== FOOTER ===== -->
+<!-- Product container -->
+<div class="container">
+  <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 1</p></div>
+  <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 2</p></div>
+  <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 3</p></div>
+  <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 4</p></div>
+</div>
+
+<!-- Footer -->
 <footer>
-  <section>
-    <div>
-      <h6>Company</h6>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Investors</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Blogs and news</a></li>
-        <li><a href="#">Example</a></li>
-      </ul>
-    </div>
-    <div>
-      <h6>Buyers</h6>
-      <ul>
-        <li><a href="#">Find store</a></li>
-        <li><a href="#">Registration</a></li>
-        <li><a href="#">Partnerships</a></li>
-        <li><a href="#">Gift vouchers</a></li>
-        <li><a href="#">Example</a></li>
-      </ul>
-    </div>
-    <div>
-      <h6>Help</h6>
-      <ul>
-        <li><a href="#">Contact us</a></li>
-        <li><a href="#">Live chat</a></li>
-        <li><a href="#">Documentation</a></li>
-        <li><a href="#">Download</a></li>
-        <li><a href="#">Versions</a></li>
-      </ul>
-    </div>
-    <div>
-      <h6>Service</h6>
-      <ul>
-        <li><a href="#">Safe purchase</a></li>
-        <li><a href="#">Logistics service</a></li>
-        <li><a href="#">Refund</a></li>
-        <li><a href="#">Example link</a></li>
-        <li><a href="#">Something</a></li>
-      </ul>
-    </div>
-    <div>
-      <h6>Language</h6>
-      <ul>
-        <li><a href="#">Español</a></li>
-        <li><a href="#">Português</a></li>
-        <li><a href="#">Deutsch</a></li>
-        <li><a href="#">日本語</a></li>
-      </ul>
-    </div>
-  </section>
-  <hr>
   <p>Copyright © 2025 - 2027 DTHN</p>
 </footer>
 
