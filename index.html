@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trang của bạn</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons@0.1.2/css/themify-icons.css">
 <style>
   /* --- Reset cơ bản --- */
   * {margin:0; padding:0; box-sizing:border-box;}
@@ -91,6 +92,52 @@
   }
   .navbar-right a:hover {background-color: #ccf5cc;}
 
+	/* Vòng tròn ngoài icon và hiệu ứng hover */
+.icon-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #0b4f6c; /* màu vòng tròn mặc định */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+/* Tooltip tên icon */
+.icon-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -30px; /* bên dưới icon */
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  background-color: #0b4f6c;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+/* Hover effect: to icon, đổi màu, hiện tooltip */
+.icon-btn:hover {
+  background-color: #32a852; /* vòng tròn đậm hơn khi hover */
+  transform: scale(1.2); /* icon và vòng tròn lớn hơn */
+}
+
+.icon-btn:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+
   /* --- Responsive --- */
   .catalog {
   padding: 40px 0;
@@ -129,10 +176,11 @@
   font-size: 0.95em;
   color: #0b4f6c;
 }
-@media (max-width: 800px) {
-  .catalog .row > div {flex: 0 1 100px;}
-  .catalog .row img {width: 100px; height: 100px;}
+@media (max-width: 500px) {
+  .navbar-right {gap: 10px;}
+  .icon-btn {width: 35px; height: 35px; font-size:16px;}
 }
+
 
   /* --- Cards --- */
   .container {
@@ -181,53 +229,61 @@
 
   <div class="navbar-right">
     <a href="#">Sign In</a>
-    <a href="#">Saved List</a>
-    <a href="#">My Order</a>
-    <a href="#">My Cart</a>
-  </div>
+    <div class="icon-btn" data-tooltip="Saved List">
+        <i class="ti-heart"></i>
+    </div>
+    <div class="icon-btn" data-tooltip="My Order">
+        <i class="ti-archive"></i>
+    </div>
+    <div class="icon-btn" data-tooltip="My Cart">
+        <i class="ti-shopping-cart"></i>
+    </div>
+</div>
 </div>
 
 <!-- Product Catalog Section -->
 <section class="catalog">
-  <div class="container">
     <header>
       <h4>Product Catalog</h4>
     </header>
-    <div class="row">
-      <div>
-        <a href="#"><img src="logo.jpg" alt=""><p>Thời Trang</p></a>
-      </div>
-      <div>
-        <a href="#"><img src="logo.jpg" alt=""><p>Gia Dụng</p></a>
-      </div>
-      <div>
-        <a href="#"><img src="logo.jpg" alt=""><p>Điện Tử</p></a>
-      </div>
-      <div>
-        <a href="#"><img src="logo.jpg" alt=""><p>Sách & Văn Phòng Phẩm</p></a>
-      </div>
-      <div>
-        <a href="#"><img src="logo.jpg" alt=""><p>Mẹ & Bé</p></a>
-      </div>
-      <div>
-        <a href="#"><img src="logo.jpg" alt=""><p>Nội Thất</p></a>
-      </div>
-      <div>
-        <a href="#"><img src="logo.jpg" alt=""><p>Sức Khỏe & Sắc Đẹp</p></a>
-      </div>
+	<div class="container">
+	    <div class="row">
+	      <div>
+	        <a href="#"><img src="logo.jpg" alt=""><p>Thời Trang</p></a>
+	      </div>
+	      <div>
+	        <a href="#"><img src="logo.jpg" alt=""><p>Gia Dụng</p></a>
+	      </div>
+	      <div>
+	        <a href="#"><img src="logo.jpg" alt=""><p>Điện Tử</p></a>
+	      </div>
+	      <div>
+	        <a href="#"><img src="logo.jpg" alt=""><p>Sách & Văn Phòng Phẩm</p></a>
+	      </div>
+	      <div>
+	        <a href="#"><img src="logo.jpg" alt=""><p>Mẹ & Bé</p></a>
+	      </div>
+	      <div>
+	        <a href="#"><img src="logo.jpg" alt=""><p>Nội Thất</p></a>
+	      </div>
+	      <div>
+	        <a href="#"><img src="logo.jpg" alt=""><p>Sức Khỏe & Sắc Đẹp</p></a>
+	      </div>
     </div>
   </div>
 </section>
 <!-- Product container -->
-<div class="container">
+<section class = "catalog">
 	<header>
       <h5>Most popular categories</h5>
     </header>
+<div class="container">
   <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 1</p></div>
   <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 2</p></div>
   <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 3</p></div>
   <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 4</p></div>
 </div>
+</section>
 
 <footer class="bg-neutral-100 border-top">
 	<section class="py-12 links-secondary container d-grid gap-5 grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
