@@ -92,12 +92,47 @@
   .navbar-right a:hover {background-color: #ccf5cc;}
 
   /* --- Responsive --- */
-  @media (max-width: 800px) {
-    .search-bar {
-      flex-basis: 100%; /* rớt xuống dòng */
-      margin-top: 10px;
-    }
-  }
+  .catalog {
+  padding: 40px 0;
+  background-color: #f9fff9;
+}
+.catalog header h4 {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  color: #0b4f6c;
+  text-align: center;
+}
+.catalog .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.catalog .row > div {
+  flex: 0 1 120px;
+  text-align: center;
+}
+.catalog .row img {
+  border-radius: 50%;
+  border: 4px solid #a0f1a0;
+  background-color: #d4f2d0;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  transition: border-color 0.3s;
+}
+.catalog .row img:hover {
+  border-color: #ccf5cc;
+}
+.catalog .row p {
+  margin-top: 8px;
+  font-size: 0.95em;
+  color: #0b4f6c;
+}
+@media (max-width: 800px) {
+  .catalog .row > div {flex: 0 1 100px;}
+  .catalog .row img {width: 100px; height: 100px;}
+}
 
   /* --- Cards --- */
   .container {
@@ -152,8 +187,42 @@
   </div>
 </div>
 
+<!-- Product Catalog Section -->
+<section class="catalog">
+  <div class="container">
+    <header>
+      <h4>Product Catalog</h4>
+    </header>
+    <div class="row">
+      <div>
+        <a href="#"><img src="logo.jpg" alt=""><p>Thời Trang</p></a>
+      </div>
+      <div>
+        <a href="#"><img src="logo.jpg" alt=""><p>Gia Dụng</p></a>
+      </div>
+      <div>
+        <a href="#"><img src="logo.jpg" alt=""><p>Điện Tử</p></a>
+      </div>
+      <div>
+        <a href="#"><img src="logo.jpg" alt=""><p>Sách & Văn Phòng Phẩm</p></a>
+      </div>
+      <div>
+        <a href="#"><img src="logo.jpg" alt=""><p>Mẹ & Bé</p></a>
+      </div>
+      <div>
+        <a href="#"><img src="logo.jpg" alt=""><p>Nội Thất</p></a>
+      </div>
+      <div>
+        <a href="#"><img src="logo.jpg" alt=""><p>Sức Khỏe & Sắc Đẹp</p></a>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- Product container -->
 <div class="container">
+	<header>
+      <h5>Most popular categories</h5>
+    </header>
   <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 1</p></div>
   <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 2</p></div>
   <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 3</p></div>
@@ -216,6 +285,7 @@
 	<hr class="my-0">
 	<section class="text-center py-6">
 		<p>Copyright © 2025 - 2027 DTHN</p>
+	</section>
 </footer>
 
 </body>
