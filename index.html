@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trang của bạn</title>
-<link rel="stylesheet" href="https://unpkg.com/themify-icons@0.1.2/css/themify-icons.css">
 <style>
   /* --- Reset cơ bản --- */
   * {margin:0; padding:0; box-sizing:border-box;}
@@ -13,7 +12,7 @@
   /* --- Navbar --- */
   .navbar {
     display: flex;
-	gap: 30px;
+    gap: 30px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -26,25 +25,46 @@
     gap: 15px;
     flex-wrap: wrap;
   }
-  .brand {font-size: 1.5em; font-weight: bold; color: #0b4f6c;}
-  
+
+  /* Brand */
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* khoảng cách logo - chữ */
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #0b4f6c;
+  }
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  /* Hamburger 3 gạch ngang */
+  .hamburger {
+    font-size: 18px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
   /* Dropdown All Catalog */
   .dropdown {
     position: relative;
   }
- .dropdown button {
-  background-color: #a0f1a0;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  color: #0b4f6c;
-  display: flex;        /* cho icon và chữ cùng hàng */
-  align-items: center;  /* căn giữa theo chiều dọc */
-  gap: 6px;             /* khoảng cách giữa icon và chữ */
-  font-size: 1em;
-}
-
+  .dropdown button {
+    background-color: #a0f1a0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #0b4f6c;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1em;
+  }
   .dropdown-content {
     display: none;
     position: absolute;
@@ -65,12 +85,11 @@
   .dropdown-content a:hover {background-color: #ccf5cc;}
   .dropdown:hover .dropdown-content {display: block;}
   .dropdown button:hover {
-	background-color: #32a852;
-  	color: #fff;
-}
+    background-color: #32a852;
+    color: #fff;
+  }
 
-
-  /* Search bar */
+  /* --- Search Bar --- */
   .search-bar {
     display: flex;
     flex: 2;
@@ -87,27 +106,25 @@
     font-size: 0.95em;
   }
   .search-bar button {
-  width: 35px;       /* nhỏ hơn khung mặc định */
-  height: 35px;
-  border-radius: 50%;
-  background-color: #a0f1a0; /* giống All Catalog */
-  color: #0b4f6c;   /* icon kính lúp màu đậm */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s;
-}
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #a0f1a0;
+    color: #0b4f6c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .search-bar button:hover {
+    background-color: #32a852;
+    color: #fff;
+    transform: scale(1.2);
+  }
 
-.search-bar button:hover {
-  background-color: #32a852;
-  color: #fff;
-  transform: scale(1.2); /* to hơn một chút */
-}
-
-
-  /* Navbar right items */
+  /* --- Navbar Right Items --- */
   .navbar-right a {
     text-decoration: none;
     color: #0b4f6c;
@@ -116,136 +133,121 @@
   }
   .navbar-right a:hover {background-color: #ccf5cc;}
 
-/* Icon tròn SVG */
-.icon-btn {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  background-color: #a0f1a0; /* màu giống All Catalog */
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  margin-left: 10px;
-  transition: all 0.3s;
-  color: #0b4f6c; /* viền SVG màu */
-}
+  /* Icon buttons */
+  .icon-btn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #a0f1a0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+    color: #0b4f6c;
+    z-index: 1;
+  }
+  .icon-btn svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s;
+  }
+  .icon-btn:hover {
+    background-color: #32a852;
+    color: #fff;
+  }
+  .icon-btn:hover svg {
+    transform: scale(1.2);
+  }
 
-.icon-btn svg {
-  width: 18px;
-  height: 18px;
-}
+  /* Tooltip */
+  .icon-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background-color: #32a852;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: all 0.3s;
+    opacity: 0;
+    z-index: 10;
+  }
+  .icon-btn:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
 
-.icon-btn.search-btn {
-  width: 35px;
-  height: 35px;
-}
-
-.icon-btn:hover {
-  background-color: #32a852; /* hover xanh đậm */
-  transform: scale(1.2);
-  color: #fff; /* viền icon đổi màu trắng */
-}
-
-.icon-btn:hover svg {
-  stroke: currentColor; /* đảm bảo SVG viền đổi màu theo color */
-}
-
-	/* Sign In button chữ nhật */
-.sign-in-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 6px;
-  background-color: #0b4f6c;
-  color: #ffd700;
-  text-decoration: none;
-  transition: all 0.3s;
-  font-weight: bold;
-}
-
-.sign-in-btn:hover {
-  background-color: #32a852;
-  transform: scale(1.05);
-}
-
-	/* Logo brand */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* khoảng cách logo - chữ */
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #0b4f6c;
-}
-.brand-logo {
-  width: 40px;  /* bằng khung icon */
-  height: 40px;
-  object-fit: cover;
-  border-radius: 50%; /* nếu muốn bo tròn */
-}
-
-/* Hamburger 3 gạch ngang */
-.hamburger {
-  font-size: 18px;  /* tương đương icon */
-  margin-right: 5px;
-  vertical-align: middle;
-}
+  /* Sign In Button */
+	.sign-in-btn {
+	  display: inline-block;
+	  padding: 8px 16px;
+	  border-radius: 6px;
+	  background-color: #a0f1a0;  /* giống All Catalog */
+	  color: #0b4f6c;            /* chữ màu đậm giống icon */
+	  text-decoration: none;
+	  transition: all 0.3s;
+	  font-weight: bold;
+	}
+	.sign-in-btn:hover {
+	  background-color: #32a852;  /* giống hover của All Catalog */
+	  color: #fff;
+	  transform: scale(1.05);
+	}
 
 
-
-  /* --- Responsive --- */
+  /* --- Catalog --- */
   .catalog {
-  padding: 40px 0;
-  background-color: #f9fff9;
-}
-.catalog header h4 {
-  font-size: 1.4em;
-  margin-bottom: 20px;
-  color: #0b4f6c;
-  text-align: center;
-}
-	.catalog header h5 {
-  text-align: left;
-  margin-left: 5%;
-  margin-bottom: 20px;
-  font-size: 1.4em;
-  color: #0b4f6c;
-}
-
-
-.catalog .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-.catalog .row > div {
-  flex: 0 1 120px;
-  text-align: center;
-}
-.catalog .row img {
-  border-radius: 50%;
-  border: 4px solid #a0f1a0;
-  background-color: #d4f2d0;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  transition: border-color 0.3s;
-}
-.catalog .row img:hover {
-  border-color: #ccf5cc;
-}
-.catalog .row p {
-  margin-top: 8px;
-  font-size: 0.95em;
-  color: #0b4f6c;
-}
-@media (max-width: 500px) {
-  .navbar-right {gap: 10px;}
-  .icon-btn {width: 35px; height: 35px; font-size:16px;}
-}
-
+    padding: 40px 0;
+    background-color: #f9fff9;
+  }
+  .catalog header h4 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    color: #0b4f6c;
+    text-align: center;
+  }
+  .catalog header h5 {
+    text-align: left;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    color: #0b4f6c;
+  }
+  .catalog .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .catalog .row > div {
+    flex: 0 1 120px;
+    text-align: center;
+  }
+  .catalog .row img {
+    border-radius: 50%;
+    border: 4px solid #a0f1a0;
+    background-color: #d4f2d0;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    transition: border-color 0.3s;
+  }
+  .catalog .row img:hover {
+    border-color: #ccf5cc;
+  }
+  .catalog .row p {
+    margin-top: 8px;
+    font-size: 0.95em;
+    color: #0b4f6c;
+  }
 
   /* --- Cards --- */
   .container {
@@ -269,6 +271,12 @@
   /* --- Footer --- */
   footer {background-color:#d4f2d0; padding: 20px;}
   footer a {color: #0b4f6c; text-decoration: none;}
+
+  /* --- Responsive --- */
+  @media (max-width: 500px) {
+    .navbar-right {gap: 10px;}
+    .icon-btn {width: 35px; height: 35px; font-size:16px;}
+  }
 </style>
 </head>
 <body>
@@ -295,92 +303,72 @@
     </div>
   </div>
   
+  <!-- Search Bar -->
   <div class="search-bar">
     <input type="text" placeholder="Search product">
-    <button>🔍</button>
+    <button>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </button>
   </div>
 
   <div class="navbar-right">
-  <!-- Sign In -->
-  <a href="#" class="sign-in-btn" data-tooltip="Sign In">Sign In</a>
+    <!-- Sign In -->
+    <a href="#" class="sign-in-btn" data-tooltip="Sign In">Sign In</a>
 
-  <!-- Saved List -->
-  <div class="icon-btn" data-tooltip="Saved List">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-    </svg>
+    <!-- Saved List -->
+    <div class="icon-btn" data-tooltip="Saved List">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </div>
+
+    <!-- My Order -->
+    <div class="icon-btn" data-tooltip="My Order">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 3h18v18H3V3zm6 6h6v6H9V9z"/>
+      </svg>
+    </div>
+
+    <!-- My Cart -->
+    <div class="icon-btn" data-tooltip="My Cart">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 6h15l-1.5 9h-13L6 6z"/>
+        <circle cx="9" cy="21" r="1" />
+        <circle cx="18" cy="21" r="1" />
+      </svg>
+    </div>
   </div>
-
-  <!-- My Order -->
-  <div class="icon-btn" data-tooltip="My Order">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M3 3h18v18H3V3zm6 6h6v6H9V9z"/>
-    </svg>
-  </div>
-
-  <!-- My Cart -->
-  <div class="icon-btn" data-tooltip="My Cart">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M6 6h15l-1.5 9h-13L6 6z"/>
-      <circle cx="9" cy="21" r="1" />
-      <circle cx="18" cy="21" r="1" />
-    </svg>
-  </div>
-
-  <!-- Search Button nhỏ hơn -->
-  <div class="icon-btn search-btn" data-tooltip="Search">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="11" cy="11" r="8"/>
-      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-    </svg>
-  </div>
-</div>
-
-
-</div>
-
-</div>
 </div>
 
 <!-- Product Catalog Section -->
 <section class="catalog">
-    <header>
-      <h4>Product Catalog</h4>
-    </header>
-	<div class="container">
-	    <div class="row">
-	      <div>
-	        <a href="#"><img src="logo.jpg" alt=""><p>Thời Trang</p></a>
-	      </div>
-	      <div>
-	        <a href="#"><img src="logo.jpg" alt=""><p>Gia Dụng</p></a>
-	      </div>
-	      <div>
-	        <a href="#"><img src="logo.jpg" alt=""><p>Điện Tử</p></a>
-	      </div>
-	      <div>
-	        <a href="#"><img src="logo.jpg" alt=""><p>Sách & Văn Phòng Phẩm</p></a>
-	      </div>
-	      <div>
-	        <a href="#"><img src="logo.jpg" alt=""><p>Mẹ & Bé</p></a>
-	      </div>
-	      <div>
-	        <a href="#"><img src="logo.jpg" alt=""><p>Nội Thất</p></a>
-	      </div>
-	      <div>
-	        <a href="#"><img src="logo.jpg" alt=""><p>Sức Khỏe & Sắc Đẹp</p></a>
-	      </div>
+  <header>
+    <h4>Product Catalog</h4>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div><a href="#"><img src="logo.jpg" alt=""><p>Thời Trang</p></a></div>
+      <div><a href="#"><img src="logo.jpg" alt=""><p>Gia Dụng</p></a></div>
+      <div><a href="#"><img src="logo.jpg" alt=""><p>Điện Tử</p></a></div>
+      <div><a href="#"><img src="logo.jpg" alt=""><p>Sách & Văn Phòng Phẩm</p></a></div>
+      <div><a href="#"><img src="logo.jpg" alt=""><p>Mẹ & Bé</p></a></div>
+      <div><a href="#"><img src="logo.jpg" alt=""><p>Nội Thất</p></a></div>
+      <div><a href="#"><img src="logo.jpg" alt=""><p>Sức Khỏe & Sắc Đẹp</p></a></div>
     </div>
   </div>
 </section>
+
 <!-- Product container -->
-<section class = "catalog">
-	<header>
-      <h5>Most popular categories</h5>
-    </header>
-<div class="container">
-  <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 1</p></div>
-  <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 2</p></div>
+<section class="catalog">
+  <header>
+    <h5>Most popular categories</h5>
+  </header>
+  <div class="container">
+    <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 1</p></div>
+    <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 2</p></div>
   <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 3</p></div>
   <div class="card"><img src="logo.jpg" alt=""><p>Sản phẩm 4</p></div>
 </div>
