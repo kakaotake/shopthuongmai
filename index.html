@@ -268,6 +268,25 @@
 	  text-decoration: none;
 	}
 
+    /* Container cho Most popular categories */
+.catalog .container.popular {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: max-content;   /* chiều rộng vừa khít các card */
+    margin: 0 auto;       /* căn giữa */
+    padding: 10px;        /* padding bên trong khung */
+    background-color: #ddd; /* màu khung xám */
+    border-radius: 3px;  /* viền bo tròn */
+}
+
+.catalog .container.popular .card {
+    background-color: #fff;  /* nền trắng bên trong */
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
   /* --- Cards --- */
   .container {
     width: 90%;
@@ -285,7 +304,24 @@
     padding: 10px;
   }
   .card img {width: 100%; height: 150px; object-fit: cover; background-color: #bbb;}
-  .card p {margin-top: 10px;}
+  .card p {
+    margin-top: 10px;
+    text-align: left;
+    color: black;
+    font-size: 0.95cm;
+    line-height: 1.2em;
+    padding-left: 5px;
+    }
+
+    .card p .lineyelow {
+    color: #FFD700; /* màu vàng */
+    }
+
+    .card p .linegreen {
+    color: rgb(23, 170, 23); /* màu xanh */
+    }
+
+
 
   /* --- Footer --- */
   footer {background-color:#d4f2d0; padding: 20px;}
@@ -385,11 +421,34 @@
   <header>
     <h5>Most popular categories</h5>
   </header>
-  <div class="container">
-    <div class="card"><img src="access/sanpham1.png" alt=""><p>Sản phẩm 1</p></div>
-    <div class="card"><img src="access/sanpham2.png" alt=""><p>Sản phẩm 2</p></div>
-  <div class="card"><img src="access/sanpham3.png" alt=""><p>Sản phẩm 3</p></div>
-  <div class="card"><img src="access/sanpham4.png" alt=""><p>Sản phẩm 4</p></div>
+  <div class="container popular">
+    <div class="card"><img src="access/sanpham1.png" alt="">
+        <p>
+            Coffee and Tea Cup with Plate<br>
+            <span class="lineyelow">$50.00</span><br>
+            <span class="linegreen">freeship</span>
+        </p></div>
+    <div class="card"><img src="access/sanpham2.png" alt="">
+        <p>
+            Name of the product<br>
+            <span class="lineyelow">$60.00</span><br>
+            <span class="linegreen">freeship</span>
+        </p></div>
+    <div class="card"><img src="access/sanpham3.png" alt=""><p>
+            Name of the product<br>
+            <span class="lineyelow">$79.00</span><br>
+            <span class="linegreen">freeship</span>
+        </p></div>
+    <div class="card"><img src="access/sanpham4.png" alt=""><p>
+            Name of the product<br>
+            <span class="lineyelow">$63.00</span><br>
+            <span class="linegreen">freeship</span>
+        </p></div>
+    <div class="card"><img src="access/sanpham5.png" alt=""><p>
+            Name of the product<br>
+            <span class="lineyelow">$22.00</span><br>
+            <span class="linegreen">freeship</span>
+        </p></div>
 </div>
 </section>
 
