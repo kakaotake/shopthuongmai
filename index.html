@@ -128,10 +128,10 @@
   .navbar-right {
 	  display: flex;
 	  align-items: center;
-	  gap: 8px; /* khoảng cách giữa Sign In và nhóm icon */
+	  gap: 10px; /* khoảng cách giữa Sign In và nhóm icon */
 	}
 
-  .navbar-right a:hover {background-color: #ccf5cc;}
+  .navbar-right a:hover {background-color: #32a852;}
 
   /* Icon buttons */
   .icon-btn {
@@ -146,13 +146,17 @@
     cursor: pointer;
     margin-left: 0;
     transition: background-color 0.3s;
-    color: #0b4f6c;
+    color: black;
     z-index: 1;
   }
 
-	.icon-btn + .icon-btn {
-	margin-left: 1px; /* khoảng cách giữa các icon */
-	}
+
+  .icon-group {
+    display: flex;
+    gap: 3px;          /* khoảng cách giữa các icon */
+    margin-left: 20px; /* cách Sign In ra xa */
+  }
+
   .icon-btn svg {
     width: 18px;
     height: 18px;
@@ -205,7 +209,7 @@
 }
 .sign-in-btn:hover {
   background-color: #32a852;
-  color: #32a852;
+  color: white;
   border-color: #32a852;         /* khung hover theo background */
   transform: scale(1.05);
 }
@@ -273,10 +277,12 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
-    width: max-content;   /* chiều rộng vừa khít các card */
+    width: max-content;   /* chiều rộng vừa khít với thanh header */
+    max-width: none;
     margin: 0 auto;       /* căn giữa */
     padding: 10px;        /* padding bên trong khung */
-    background-color: #ddd; /* màu khung xám */
+    background-color: #fff; /* màu khung xám */
+    border: 2px solid #d3d3d3;
     border-radius: 3px;  /* viền bo tròn */
 }
 
@@ -284,6 +290,13 @@
     background-color: #fff;  /* nền trắng bên trong */
     border-radius: 10px;
     padding: 10px;
+    text-align: left;
+}
+
+.catalog .container.popular .card p {
+    font-size: 0.95em;
+    color: #0b4f6c;
+    margin-top: 8px;
 }
 
 
@@ -297,7 +310,8 @@
     gap: 20px;
   }
   .card {
-    background-color: #ddd;
+    background-color: #ffffff;
+    border: 2px solid#d3d3d3;
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
@@ -328,9 +342,14 @@
   footer a {color: #0b4f6c; text-decoration: none;}
 
   /* --- Responsive --- */
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     .navbar-right {gap: 10px;}
     .icon-btn {width: 35px; height: 35px; font-size:16px;}
+
+    .catalog .container.popular {
+            width: 100%;       /* vừa màn hình */
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        }
   }
 </style>
 </head>
@@ -373,27 +392,29 @@
     <!-- Sign In -->
     <a href="#" class="sign-in-btn" data-tooltip="Sign In">Sign In</a>
 
-    <!-- Saved List -->
-    <div class="icon-btn" data-tooltip="Saved List">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-      </svg>
-    </div>
+    <div class="icon-group">
+      <!-- Saved List -->
+      <div class="icon-btn" data-tooltip="Saved List">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
 
-    <!-- My Order -->
-    <div class="icon-btn" data-tooltip="My Order">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M3 3h18v18H3V3zm6 6h6v6H9V9z"/>
-      </svg>
-    </div>
+      <!-- My Order -->
+      <div class="icon-btn" data-tooltip="My Order">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 3h18v18H3V3zm6 6h6v6H9V9z"/>
+        </svg>
+      </div>
 
-    <!-- My Cart -->
-    <div class="icon-btn" data-tooltip="My Cart">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M6 6h15l-1.5 9h-13L6 6z"/>
-        <circle cx="9" cy="21" r="1" />
-        <circle cx="18" cy="21" r="1" />
-      </svg>
+      <!-- My Cart -->
+      <div class="icon-btn" data-tooltip="My Cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 6h15l-1.5 9h-13L6 6z"/>
+          <circle cx="9" cy="21" r="1" />
+          <circle cx="18" cy="21" r="1" />
+        </svg>
+      </div>
     </div>
   </div>
 </div>
