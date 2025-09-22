@@ -336,10 +336,59 @@
     border: 2px solid #d3d3d3;
     border-radius: 10px;
     padding: 0;
+    position: relative;
     overflow: hidden;
     transition: border-color 0.3s ease;
     background-color: #fff;
     display: block;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card .heart {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card .heart::before,
+.card .heart::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 18px;
+  background-color: #0b4f6c;
+  border-radius: 10px 10px 0 0;
+  top: 8px;
+}
+
+.card .heart::before {
+  left: 12px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.card .heart::after {
+  left: 8px;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.card:hover .heart {
+  opacity: 1;
 }
 
 
@@ -359,7 +408,7 @@
 }
 
 .catalog .container.popular .card:hover {
-  border-color: #32a852; /* viền đậm hơn khi hover */
+  border-color: #32a852;
 }
 
 
@@ -432,15 +481,17 @@
 
 footer .footer-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* mặc định 2 cột cho mobile */
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 footer .footer-column h6 {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 1.2em;
     margin-bottom: 12px;
+    color: #0b4f6c;
 }
 
 footer .footer-column ul {
@@ -629,60 +680,70 @@ footer .footer-bottom {
       </div>
     </section>
 
-    <!-- Product container -->
+    <!-- Product deal current -->
     <section class="catalog">
       <header>
-        <h5>Most popular categories</h5>
+        <h5>Today's big deals</h5>
       </header>
       <div class="container popular">
         <div class="card"><img src="access/sanpham1.png" alt="">
+        <div class="heart"></div>
             <p>
                 Coffee and Tea Cup with Plate<br>
                 <span class="lineyelow">$50.00</span><br>
                 <span class="linegreen">freeship</span>
             </p></div>
         <div class="card"><img src="access/sanpham2.png" alt="">
+          <div class="heart"></div>
             <p>
                 Name of the product<br>
                 <span class="lineyelow">$60.00</span><br>
                 <span class="linegreen">freeship</span>
             </p></div>
         <div class="card"><img src="access/sanpham3.png" alt=""><p>
+          <div class="heart"></div>
                 Name of the product<br>
                 <span class="lineyelow">$79.00</span><br>
                 <span class="linegreen">freeship</span>
             </p></div>
         <div class="card"><img src="access/sanpham4.png" alt=""><p>
+          <div class="heart"></div>
                 Name of the product<br>
                 <span class="lineyelow">$63.00</span><br>
                 <span class="linegreen">freeship</span>
             </p></div>
         <div class="card"><img src="access/sanpham5.png" alt=""><p>
+          <div class="heart"></div>
                 Name of the product<br>
                 <span class="lineyelow">$22.00</span><br>
                 <span class="linegreen">freeship</span>
             </p></div>
       <div class="card"><img src="access/sanpham6.png" alt=""><p>
+        <div class="heart"></div>
           Name of the product<br>
           <span class="lineyelow">$9.00</span><br>
           <span class="linegreen">freeship</span>
         </p></div>
       <div class="card"><img src="access/sanpham7.png" alt=""><p>
+        <div class="heart"></div>
                 Name of the product<br>
                 <span class="lineyelow">$15.00</span><br>
                 <span class="linegreen">freeship</span>
             </p></div>
       <div class="card"><img src="access/sanpham8.png" alt=""><p>
+        <div class="heart"></div>
                 Name of the product<br>
                 <span class="lineyelow">$52.00</span><br>
                 <span class="linegreen">freeship</span>
             </p></div>
       <div class="card"><img src="access/sanpham9.png" alt=""><p>
+        <div class="heart"></div>
                 Name of the product<br>
                 <span class="lineyelow">$37.00</span><br>
                 <span class="linegreen">freeship</span>
             </p></div>
       <div class="card"><img src="access/sanpham10.png" alt=""><p>
+        <div class="heart"></div>
                 Name of the product<br>
                 <span class="lineyelow">$64.00</span><br>
                 <span class="linegreen">freeship</span>
