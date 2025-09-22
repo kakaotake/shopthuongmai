@@ -21,9 +21,9 @@
       gap: 30px;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       background-color: #d4f2d0;
-      padding: 10px 0;
+      padding: 10px 20px;
   }
   .navbar-left, .navbar-right {
       display: flex;
@@ -224,7 +224,7 @@
 /*--header-nav--*/
 .extra-nav {
   background-color: transparent;
-  padding: 4px 0;
+  padding: 10px 0;
   margin-top: 0;
   margin-bottom: 2px;
   border: none;
@@ -312,12 +312,14 @@
     /* Container cho Most popular categories */
 .catalog .container.popular {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    width: calc(100% - 40px);   /* chiều rộng vừa khít với thanh header */
-    margin: 0 auto;       /* căn giữa */
-    padding: 10px;
+    grid-template-columns: repeat(2, 1fr); /* 2 cột */
+    gap: 10px;                              /* khoảng cách giữa các card */
+    width: 100%;                             /* chiếm toàn bộ chiều rộng trong page-container */
+    margin: 0 auto;                          /* căn giữa */
+    padding: 0 20px;                         /* padding 2 bên bằng page-container */
+    box-sizing: border-box;                  /* để padding không làm tràn chiều rộng */
 }
+
 
 .catalog .container.popular .card {
   display: inline-block;
@@ -527,7 +529,7 @@
     </nav>
 
     <!-- Kẻ ngang ngăn cách thanh công cụ và phần sản phẩm -->
-    <hr style="border: none; height: 0.5px; background: #eee; margin: 0; width: 100%;">
+    <hr style="border: none; height: 1.5px; background: #ccc; margin: 0; width: 100%;">
 
   <div class="page-container">
 
