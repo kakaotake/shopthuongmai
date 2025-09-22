@@ -391,7 +391,7 @@
     /*--show more--*/
 .show-more {
   width: calc(100% - 40px);
-  margin: 5px auto 40;
+  margin: 5px auto 40px;
   padding: 8px 0;
   background-color: #b9bcbb;
   color: #0b4f6cf;
@@ -433,8 +433,7 @@
 </style>
 </head>
 <body>
-  <div class="page-container">
-        <!-- Navbar -->
+  <!-- Navbar -->
     <div class="navbar">
       <div class="navbar-left">
         <!-- Brand với logo -->
@@ -508,7 +507,6 @@
         </div>
       </div>
     </div>
-
     <!--header-nav-->
     <nav class="navbar extra-nav">
       <div class="container">
@@ -534,6 +532,7 @@
     <!-- Kẻ ngang ngăn cách thanh công cụ và phần sản phẩm -->
     <hr style="border: none; height: 0.5px; background: #eee; margin: 0; width: 100%;">
 
+  <div class="page-container">
 
     <!-- Product Catalog Section -->
     <section class="catalog">
@@ -618,8 +617,8 @@
     <div class="show-more">
       <span>Show More Product</span>
     </div>
-
-    <footer class="bg-neutral-100 border-top">
+  </div>
+  <footer class="bg-neutral-100 border-top">
       <section class="py-12 links-secondary container d-grid gap-5 grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
         <div>
           <h6 class="mb-3">Company</h6>
@@ -678,7 +677,6 @@
       </section>
 
     </footer>
-  </div>
 
 </body>
 </html>
