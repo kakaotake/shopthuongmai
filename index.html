@@ -352,36 +352,22 @@
   position: absolute;
   top: 8px;
   right: 8px;
-  width: 25px;
-  height: 25px;
-  transform: rotate(-45deg);
+  opacity: 0;
+  transition: opacity 0.3s, fill 0.3s, stroke 0.3s;
   cursor: pointer;
 }
 
-.card .heart::before,
-.card .heart::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border: 2px solid #0b4f6c;
-  border-radius: 50%;
-  background-color: transparent;
-}
-
-.card .heart::before {
-  top: -12.5px;
-  left: 0;
-}
-
-.card .heart::after {
-  top: 0;
-  left: 12.5px;
-}
-
-
 .card:hover .heart {
   opacity: 1;
+}
+
+.card .heart svg path {
+  fill: transparent;
+  stroke: #0b4f6c;
+}
+
+.card:hover .heart svg path {
+  fill: #0b4f6c;
 }
 
 
