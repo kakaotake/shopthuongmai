@@ -146,7 +146,7 @@
     cursor: pointer;
     margin-left: 0;
     transition: background-color 0.3s, transform 0.3s;
-    color: black;
+    color: #0b4f6c;
     z-index: 1;
   }
 
@@ -203,7 +203,7 @@
   padding: 8px 16px;
   border-radius: 6px;
   background-color: #a0f1a0;     /* cùng tông All Catalog */
-  color: black;
+  color: #0b4f6c;
   text-decoration: none;
   border: 2px solid #a0f1a0;     /* tạo khung như nút */
   transition: all 0.3s;
@@ -216,9 +216,10 @@
 
 /*--thanh điều hướng--*/
 .extra-nav {
-  background-color: #d4f2d0;
+  background-color: transparent;
   padding: 8px 0;
   margin-bottom: 10px;
+  border: none;
 }
 
 .extra-nav .nav {
@@ -482,7 +483,7 @@
       <li><a class="nav-link" href="#">Gift boxes</a></li>
       <li><a class="nav-link" href="#">Articles</a></li>
       <li class="dropdown">
-        <a class="nav-link" href="#">More</a>
+        <a class="nav-link" href="#">More &#9662;</a>
         <div class="dropdown-content">
           <a href="#">Example link 1</a>
           <a href="#">Example link 2</a>
@@ -492,6 +493,10 @@
     </ul>
   </div>
 </nav>
+
+<!-- Kẻ ngang ngăn cách thanh công cụ và phần sản phẩm -->
+<hr style="border: none; height: 2px; background: #000; margin: 0; width: 100%;">
+
 
 <!-- Product Catalog Section -->
 <section class="catalog">
