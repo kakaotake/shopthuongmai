@@ -7,7 +7,7 @@
 <style>
   /* --- Reset cơ bản --- */
   * {margin:0; padding:0; box-sizing:border-box;}
-  body {font-family: Calibri, sans-serif; background-color: #ffffff; color: #333;}
+  body {font-family: Calibri, sans-serif; background-color: #ffffff; color: #000000;}
 
   /* --- Navbar --- */
   .navbar {
@@ -151,7 +151,7 @@
   }
 
 	.icon-btn + .icon-btn {
-	margin-left: 5px; /* khoảng cách giữa các icon */
+	margin-left: 2px; /* khoảng cách giữa các icon */
 	}
   .icon-btn svg {
     width: 18px;
@@ -242,7 +242,7 @@
   }
   .catalog .row img {
     border-radius: 50%;
-    border: 4px solid #a0f1a0;
+    border: 4px solid #d3d3d3;
     background-color: #d4f2d0;
     width: 120px;
     height: 120px;
@@ -250,13 +250,23 @@
     transition: border-color 0.3s;
   }
   .catalog .row img:hover {
-    border-color: #ccf5cc;
+    border-color: #32a852;
   }
   .catalog .row p {
     margin-top: 8px;
     font-size: 0.95em;
     color: #0b4f6c;
   }
+
+	.catalog .row a {
+	  text-decoration: none;
+	  color: inherit;
+	}
+
+	.catalog .row a:hover {
+	  color: #32a852;
+	  text-decoration: none;
+	}
 
   /* --- Cards --- */
   .container {
