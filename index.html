@@ -22,7 +22,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    background-color: #d4f2d0;
+    background-color: transparent;
     padding: 10px 0;
     max-width: 1200px;
     margin: 0 auto;
@@ -100,11 +100,13 @@
   /* --- Search Bar --- */
   .search-bar {
     display: flex;
-    max-width: 600px;
-    background-color: #ffffff;
-    border: 2px solid #000000;
+	flex: 1 1 100%;
+	min-width: 200px;
+    background-color: #fff;
+    border: 2px solid #000;
     border-radius: 10px;
     overflow: hidden;
+    margin-top: 10px; 
   }
   .search-bar input {
     flex: 1;
@@ -413,23 +415,85 @@
 
 
   /* --- Footer --- */
-  footer {background-color:#d4f2d0; padding: 20px;}
-  footer a {color: #0b4f6c; text-decoration: none;}
+  footer {
+    background-color: #d4f2d0;
+    padding: 40px 20px 20px;
+    color: #0b4f6c;
+    font-family: Calibri, sans-serif;
+}
+
+footer .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* mặc định 2 cột cho mobile */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .footer-column h6 {
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+footer .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer .footer-column ul li {
+    margin-bottom: 8px;
+}
+
+footer .footer-column ul li a {
+    text-decoration: none;
+    color: #0b4f6c;
+    transition: color 0.3s;
+}
+
+footer .footer-column ul li a:hover {
+    color: #32a852;
+}
+
+footer hr {
+    border: none;
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+footer .footer-bottom {
+    text-align: center;
+    font-size: 0.85em;
+    padding-bottom: 10px;
+}
 
   /* --- Responsive --- */
   @media (max-width: 600px) {
     .navbar-right {gap: 10px;}
     .icon-btn {width: 35px; height: 35px; font-size:16px;}
+
+	footer .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   @media (min-width: 768px) {
     .catalog .container.popular {
         grid-template-columns: repeat(4, 1fr);
     }
+
+	.search-bar {
+        flex: 1;
+		margin-top: 0;
+	}
   }
 
   @media (min-width: 1024px) {
     .catalog .container.popular {
+        grid-template-columns: repeat(5, 1fr);
+    }
+	footer .footer-grid {
         grid-template-columns: repeat(5, 1fr);
     }
   }
@@ -621,65 +685,63 @@
       <span>Show More Product</span>
     </div>
   </div>
-  <footer class="bg-neutral-100 border-top">
-      <section class="py-12 links-secondary container d-grid gap-5 grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
-        <div>
-          <h6 class="mb-3">Company</h6>
-          <ul class="nav nav-col gap-2">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Investors</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Blogs and news</a></li>
-            <li><a href="#">Example</a></li>
-          </ul>
+  <footer>
+    <div class="footer-grid">
+        <div class="footer-column">
+            <h6>Company</h6>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Blogs and news</a></li>
+                <li><a href="#">Example</a></li>
+            </ul>
         </div>
-        <div>
-          <h6 class="mb-3">Buyers</h6>
-          <ul class="nav nav-col gap-2">
-            <li><a href="#">Find store</a></li>
-            <li><a href="#">Registration</a></li>
-            <li><a href="#">Partnerships</a></li>
-            <li><a href="#">Gift vouchers</a></li>
-            <li><a href="#">Example</a></li>
-          </ul>
+        <div class="footer-column">
+            <h6>Buyers</h6>
+            <ul>
+                <li><a href="#">Find store</a></li>
+                <li><a href="#">Registration</a></li>
+                <li><a href="#">Partnerships</a></li>
+                <li><a href="#">Gift vouchers</a></li>
+                <li><a href="#">Example</a></li>
+            </ul>
         </div>
-        <div>
-          <h6 class="mb-3">Help</h6>
-          <ul class="nav nav-col gap-2">
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Live chat</a></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">Download</a></li>
-            <li><a href="#">Versions</a></li>
-          </ul>
+        <div class="footer-column">
+            <h6>Help</h6>
+            <ul>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Live chat</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Download</a></li>
+                <li><a href="#">Versions</a></li>
+            </ul>
         </div>
-        <div>
-          <h6 class="mb-3">Service</h6>
-          <ul class="nav nav-col gap-2">
-            <li><a href="#">Safe purchase</a></li>
-            <li><a href="#">Logistics service</a></li>
-            <li><a href="#">Refund</a></li>
-            <li><a href="#">Example link</a></li>
-            <li><a href="#">Something</a></li>
-          </ul>
+        <div class="footer-column">
+            <h6>Service</h6>
+            <ul>
+                <li><a href="#">Safe purchase</a></li>
+                <li><a href="#">Logistics service</a></li>
+                <li><a href="#">Refund</a></li>
+                <li><a href="#">Example link</a></li>
+                <li><a href="#">Something</a></li>
+            </ul>
         </div>
-        <div>
-          <h6 class="mb-3">Language</h6>
-          <ul class="nav nav-col gap-2">
-            <li><a href="#">Español</a></li>
-            <li><a href="#">Português</a></li>
-            <li><a href="#">Deutsch</a></li>
-            <li><a href="#">日本語</a></li>
-          </ul>
+        <div class="footer-column">
+            <h6>Language</h6>
+            <ul>
+                <li><a href="#">Español</a></li>
+                <li><a href="#">Português</a></li>
+                <li><a href="#">Deutsch</a></li>
+                <li><a href="#">日本語</a></li>
+            </ul>
         </div>
-        
-      </section>
-      <hr class="my-0">
-      <section style="text-align: center; padding: 24px 0;">
-        <p>Copyright © 2025 - 2027 DTHN</p>
-      </section>
-
-    </footer>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+        <p>Copyright © Copyright © 2025 - 2027 DTHN</p>
+    </div>
+</footer>
 
 </body>
 </html>
