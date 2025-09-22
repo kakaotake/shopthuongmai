@@ -378,6 +378,24 @@
     color: rgb(23, 170, 23); /* màu xanh */
     }
 
+    /*--show more--*/
+.show-more {
+  width: calc(100% - 40px);
+  margin: 5px auto 0;
+  padding: 8px 0;
+  background-color: #b9bcbb;
+  color: #0b4f6cf;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+
+.show-more:hover {
+  background-color: #32a852;   /* Đổi màu khi hover */
+}
 
 
   /* --- Footer --- */
@@ -481,7 +499,7 @@
       <li><a class="nav-link" href="#">Recommends</a></li>
       <li><a class="nav-link" href="#">New arrivals</a></li>
       <li><a class="nav-link" href="#">Bestsellers</a></li>
-      <li><a class="nav-link" href="#">Gift boxes</a></li>
+      <li><a class="nav-link" href="#">Blind boxes</a></li>
       <li><a class="nav-link" href="#">Articles</a></li>
       <li class="dropdown">
         <a class="nav-link" href="#">More &#9662;</a>
@@ -496,7 +514,7 @@
 </nav>
 
 <!-- Kẻ ngang ngăn cách thanh công cụ và phần sản phẩm -->
-<hr style="border: none; height: 2px; background: #939997; margin: 0; width: 100%;">
+<hr style="border: none; height: 0.5px; background: #eee; margin: 0; width: 100%;">
 
 
 <!-- Product Catalog Section -->
@@ -550,8 +568,38 @@
             <span class="lineyelow">$22.00</span><br>
             <span class="linegreen">freeship</span>
         </p></div>
+	<div class="card"><img src="access/sanpham6.png" alt=""><p>
+			Name of the product<br>
+			<span class="lineyelow">$9.00</span><br>
+			<span class="linegreen">freeship</span>
+		</p></div>
+	<div class="card"><img src="access/sanpha7.png" alt=""><p>
+            Name of the product<br>
+            <span class="lineyelow">$15.00</span><br>
+            <span class="linegreen">freeship</span>
+        </p></div>
+	<div class="card"><img src="access/sanpham8.png" alt=""><p>
+            Name of the product<br>
+            <span class="lineyelow">$52.00</span><br>
+            <span class="linegreen">freeship</span>
+        </p></div>
+	<div class="card"><img src="access/sanpham9.png" alt=""><p>
+            Name of the product<br>
+            <span class="lineyelow">$37.00</span><br>
+            <span class="linegreen">freeship</span>
+        </p></div>
+	<div class="card"><img src="access/sanpham10.png" alt=""><p>
+            Name of the product<br>
+            <span class="lineyelow">$64.00</span><br>
+            <span class="linegreen">freeship</span>
+        </p></div>
 </div>
 </section>
+
+<!-- Show More -->
+<div class="show-more">
+  <span>Show More Product</span>
+</div>
 
 <footer class="bg-neutral-100 border-top">
 	<section class="py-12 links-secondary container d-grid gap-5 grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
