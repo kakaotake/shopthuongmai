@@ -59,7 +59,7 @@
     padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
-    color: #0b4f6c;
+    color: black;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -80,7 +80,7 @@
     display: block;
     padding: 8px 12px;
     text-decoration: none;
-    color: #0b4f6c;
+    color: black;
   }
   .dropdown-content a:hover {background-color: #ccf5cc;}
   .dropdown:hover .dropdown-content {display: block;}
@@ -201,7 +201,7 @@
   padding: 8px 16px;
   border-radius: 6px;
   background-color: #a0f1a0;     /* cùng tông All Catalog */
-  color: #0b4f6c;
+  color: black;
   text-decoration: none;
   border: 2px solid #a0f1a0;     /* tạo khung như nút */
   transition: all 0.3s;
@@ -277,17 +277,15 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
-    width: max-content;   /* chiều rộng vừa khít với thanh header */
+    width: calc(100% - 40px);   /* chiều rộng vừa khít với thanh header */
     max-width: none;
     margin: 0 auto;       /* căn giữa */
     padding: 10px;        /* padding bên trong khung */
-    background-color: #fff; /* màu khung xám */
-    border: 2px solid #d3d3d3;
-    border-radius: 3px;  /* viền bo tròn */
 }
 
 .catalog .container.popular .card {
     background-color: #fff;  /* nền trắng bên trong */
+    border: 2px solid #d3d3d3;
     border-radius: 10px;
     padding: 10px;
     text-align: left;
