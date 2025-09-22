@@ -42,12 +42,12 @@
     border-radius: 50%;
   }
 
-  /* Hamburger 3 gạch ngang */
-  .hamburger {
-    font-size: 18px;
-    margin-right: 5px;
+  /* 3 gạch ngang ALl catalog */
+  .catalog-btn svg {
+    margin-right: 6px;
     vertical-align: middle;
   }
+
 
   /* Dropdown All Catalog */
   .dropdown {
@@ -212,6 +212,34 @@
 .sign-in-btn:hover {
   background-color: #32a852;
   color: white;
+}
+
+/*--thanh điều hướng--*/
+.extra-nav {
+  background-color: #d4f2d0;
+  padding: 8px 0;
+  margin-bottom: 10px;
+}
+
+.extra-nav .nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.extra-nav .nav-link {
+  text-decoration: none;
+  color: #0b4f6c;
+  font-weight: bold;
+  padding: 6px 10px;
+  transition: 0.3s;
+}
+
+.extra-nav .nav-link:hover {
+  background-color: #32a852;
+  color: #fff;
+  border-radius: 4px;
 }
 
 
@@ -379,9 +407,15 @@
 
     <!-- Dropdown All Catalog với 3 gạch ngang -->
     <div class="dropdown">
-      <button>
-        <span class="hamburger">☰</span> All Catalog
+      <button class="catalog-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="4" y1="6" x2="20" y2="6"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+        All Catalog
       </button>
+
       <div class="dropdown-content">
         <a href="#">Category 1</a>
         <a href="#">Category 2</a>
@@ -436,6 +470,28 @@
     </div>
   </div>
 </div>
+
+<!--Thanh danh mục-->>
+<nav class="navbar extra-nav">
+  <div class="container">
+    <ul class="nav justify-content-center">
+      <li><a class="nav-link" href="#">Hot offers</a></li>
+      <li><a class="nav-link" href="#">Recommends</a></li>
+      <li><a class="nav-link" href="#">New arrivals</a></li>
+      <li><a class="nav-link" href="#">Bestsellers</a></li>
+      <li><a class="nav-link" href="#">Gift boxes</a></li>
+      <li><a class="nav-link" href="#">Articles</a></li>
+      <li class="dropdown">
+        <a class="nav-link" href="#">More</a>
+        <div class="dropdown-content">
+          <a href="#">Example link 1</a>
+          <a href="#">Example link 2</a>
+          <a href="#">Get Ecomerce UI</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
 
 <!-- Product Catalog Section -->
 <section class="catalog">
