@@ -517,6 +517,10 @@ footer .footer-bottom {
   }
 
   @media (min-width: 768px) {
+	.navbar {
+        flex-wrap: wrap;
+    }
+	  
     .catalog .container.popular {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -525,6 +529,13 @@ footer .footer-bottom {
         flex: 1;
 		margin-top: 0;
 	}
+
+	.navbar-left, .navbar-right {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
   }
 
   @media (min-width: 1024px) {
