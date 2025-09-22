@@ -17,20 +17,22 @@
 
   /* --- Navbar --- */
   .navbar {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #d4f2d0;
-      padding: 10px 20px;
-  }
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d4f2d0;
+    padding: 10px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
   .navbar-left, .navbar-right {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-  }
+	    display: flex;
+	    align-items: center;
+	    gap: 15px;
+	    flex-wrap: wrap;
+	}
 
   /* Brand */
   .brand {
@@ -312,24 +314,26 @@
     /* Container cho Most popular categories */
 .catalog .container.popular {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cột */
-    gap: 10px;                              /* khoảng cách giữa các card */
-    width: 100%;                             /* chiếm toàn bộ chiều rộng trong page-container */
-    margin: 0 auto;                          /* căn giữa */
-    padding: 0 20px;                         /* padding 2 bên bằng page-container */
-    box-sizing: border-box;                  /* để padding không làm tràn chiều rộng */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    width: 100%;
+    margin: 0 auto;                      
+    padding: 0;
+    box-sizing: border-box;
 }
-
 
 .catalog .container.popular .card {
-  display: inline-block;
-  border: 2px solid #d3d3d3;
-  border-radius: 10px;
-  padding: 0; /* bỏ padding để viền sát ảnh */
-  overflow: hidden; /* bo tròn ảnh theo card */
-  transition: border-color 0.3s ease;
-  background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #d3d3d3;
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+    background-color: #fff;
+    display: block;
 }
+
 
 .catalog .container.popular .card img {
   display: block;
